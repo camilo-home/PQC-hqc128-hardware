@@ -89,7 +89,7 @@ begin
     clk <= '1'; wait for 5 ns;
 
     -- =========================
-    -- DONE (state_valid debería activarse)
+    -- DONE (state_valid deberÃ­a activarse)
     -- =========================
     clk <= '0'; wait for 5 ns;
     clk <= '1'; wait for 5 ns;
