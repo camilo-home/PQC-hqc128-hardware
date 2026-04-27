@@ -20,7 +20,7 @@ end absorb;
 architecture rtl of absorb is
 
   -- =========================
-  -- Par·metros
+  -- Par√°metros
   -- =========================
   signal rate_bytes : integer := 136;
   signal suffix     : std_logic_vector(0 to 7);
@@ -41,7 +41,7 @@ architecture rtl of absorb is
 begin
 
   -- =========================
-  -- SelecciÛn de modo
+  -- Selecci√≥n de modo
   -- =========================
   process(mode)
   begin
@@ -69,7 +69,7 @@ begin
   end process;
 
   -- =========================
-  -- LÛgica secuencial
+  -- L√≥gica secuencial
   -- =========================
   process(clk)
   begin
