@@ -46,7 +46,7 @@ type state_type is (
 );
 signal state      : state_type;
 
--- SEÑALES
+-- SEÃ‘ALES
 signal permutation_done, clr_counter, en_counter, load_state, update_state: std_logic;
 signal round_cnt: std_logic_vector(4 downto 0);
 signal state_reg: std_logic_vector(0 to 1600-1);
