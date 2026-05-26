@@ -5,10 +5,10 @@ entity keccak_c is
 	port(
 			clk: in std_logic;
 			rst: in std_logic;
-			start: in std_logic; -- iniciar fsm
+			state_in_valid: in std_logic; -- iniciar fsm
 			permute: in std_logic; -- reusar estado actual para permutacion
-
-			state_in: in std_logic_vector(0 to 1600-1);			 
+			state_in: in std_logic_vector(0 to 1600-1);
+		 
 			state_out: out std_logic_vector(0 to 1600-1);
 			state_valid: out std_logic
 		  );
@@ -90,12 +90,10 @@ begin
 	elsif rising_edge(clk) then
 		case state is
 			when IDLE =>
-				if start = '1' then
-					if permute = '0' then
-						state <= LOAD;
-					else
-						state <= PERMUTING;
-					end if;
+				if state_in_valid = '1' then
+					state <= LOAD;
+				elsif permute = '1' then
+					state <= PERMUTING;
 				else
 					state <= IDLE;
 				end if;
