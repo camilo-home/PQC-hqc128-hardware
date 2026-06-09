@@ -9,7 +9,7 @@ entity keccak_c is
 			permute: in std_logic; -- reusar estado actual para permutacion
 			state_in: in std_logic_vector(0 to 1600-1);
 		 
-			state_out: out std_logic_vector(0 to 1600-1);
+			state_out: out std_logic_vector(0 to 1087);
 			state_valid: out std_logic
 		  );
 end keccak_c;
@@ -146,7 +146,7 @@ begin
 		state_reg <= (others => '0');
 	elsif rising_edge(clk) then
 		if load_state = '1' then
-			state_reg <= state_in;
+			state_reg <= state_reg xor state_in;
 		elsif update_state = '1' then
 			state_reg <= state_next;
 		end if;
@@ -156,6 +156,6 @@ begin
 	end if;
 end process;
 
-state_out <= out_reg;
+state_out <= out_reg(0 to 1087);
 
 end rtl;
