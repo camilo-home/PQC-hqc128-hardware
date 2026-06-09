@@ -83,54 +83,54 @@ begin
 
             next_cnt := byte_position;
 
---            -- BYTE 0
---            if din_keep(0) = '1' and next_cnt < rate_bytes then
---              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(7) & din(6) & din(5) & din(4) &
---  din(3) & din(2) & din(1) & din(0);
---              next_cnt := next_cnt + 1;
---            end if;
---
---            -- BYTE 1
---            if din_keep(1) = '1' and next_cnt < rate_bytes then
---              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(15) & din(14) & din(13) & din(12) &
---  din(11) & din(10) & din(9) & din(8);
---              next_cnt := next_cnt + 1;
---            end if;
---
---            -- BYTE 2
---            if din_keep(2) = '1' and next_cnt < rate_bytes then
---              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(23) & din(22) & din(21) & din(20) &
---  din(19) & din(18) & din(17) & din(16);
---              next_cnt := next_cnt + 1;
---            end if;
---
---            -- BYTE 3
---            if din_keep(3) = '1' and next_cnt < rate_bytes then
---              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(31) & din(30) & din(29) & din(28) &
---  din(27) & din(26) & din(25) & din(24);
---              next_cnt := next_cnt + 1;
---            end if;
+            -- BYTE 0
+            if din_keep(0) = '1' and next_cnt < rate_bytes then
+              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(7) & din(6) & din(5) & din(4) &
+  din(3) & din(2) & din(1) & din(0);
+              next_cnt := next_cnt + 1;
+            end if;
+
+            -- BYTE 1
+            if din_keep(1) = '1' and next_cnt < rate_bytes then
+              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(15) & din(14) & din(13) & din(12) &
+  din(11) & din(10) & din(9) & din(8);
+              next_cnt := next_cnt + 1;
+            end if;
+
+            -- BYTE 2
+            if din_keep(2) = '1' and next_cnt < rate_bytes then
+              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(23) & din(22) & din(21) & din(20) &
+  din(19) & din(18) & din(17) & din(16);
+              next_cnt := next_cnt + 1;
+            end if;
+
+            -- BYTE 3
+            if din_keep(3) = '1' and next_cnt < rate_bytes then
+              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(31) & din(30) & din(29) & din(28) &
+  din(27) & din(26) & din(25) & din(24);
+              next_cnt := next_cnt + 1;
+            end if;
 
 	-- DEBUG
-	    if din_keep(0) = '1' and next_cnt < rate_bytes then
-              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(0 to 7);
-              next_cnt := next_cnt + 1;
-            end if;
-
-            if din_keep(1) = '1' and next_cnt < rate_bytes then
-              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(8 to 15);
-              next_cnt := next_cnt + 1;
-            end if;
-
-            if din_keep(2) = '1' and next_cnt < rate_bytes then
-              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(16 to 23);
-              next_cnt := next_cnt + 1;
-            end if;
-
-            if din_keep(3) = '1' and next_cnt < rate_bytes then
-              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(24 to 31);
-              next_cnt := next_cnt + 1;
-            end if;
+--	    if din_keep(0) = '1' and next_cnt < rate_bytes then
+--              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(0 to 7);
+--              next_cnt := next_cnt + 1;
+--            end if;
+--
+--            if din_keep(1) = '1' and next_cnt < rate_bytes then
+--              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(8 to 15);
+--              next_cnt := next_cnt + 1;
+--            end if;
+--
+--            if din_keep(2) = '1' and next_cnt < rate_bytes then
+--              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(16 to 23);
+--              next_cnt := next_cnt + 1;
+--            end if;
+--
+--            if din_keep(3) = '1' and next_cnt < rate_bytes then
+--              state_reg((next_cnt*8) to (next_cnt*8)+7) <= din(24 to 31);
+--              next_cnt := next_cnt + 1;
+--            end if;
 
             byte_position <= next_cnt;
 
